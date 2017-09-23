@@ -202,6 +202,7 @@ require('./routes/reservation.js')(app, User, Reservation, randomString);
 require('./routes/party.js')(app, User, Party, randomString);
 require('./routes/study.js')(app, User, Study ,randomString, Board, Memory);
 require('./routes/social.js')(app, User, randomString);
+require('./routes/chat.js')(app, User, randomString);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
