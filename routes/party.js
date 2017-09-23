@@ -9,6 +9,6 @@ function init(app, User, Party, randomString) {
 
     });
     app.post('/party/delete', function (req, res) {
-        
+
     })
 }
