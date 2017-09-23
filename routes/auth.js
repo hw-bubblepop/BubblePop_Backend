@@ -42,7 +42,8 @@ function init(app, User, randomString){
                     party : [],
                     friends : [],
                     privateChat : [],
-                    publicChat :[]
+                    publicChat :[],
+                    accountType : "Facebook"
                 });
                 user.save(function(err){
                     if(err){
@@ -74,7 +75,9 @@ function init(app, User, randomString){
             party : [],
             friends : [],
             privateChat : [],
-            publicChat :[]});
+            publicChat :[],
+            accountType : "Local"
+        });
         User.find({email : req.body.email})
             .exec(function(err, result){
                 if(err){

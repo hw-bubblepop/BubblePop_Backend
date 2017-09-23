@@ -52,7 +52,8 @@ var UserSchema = new schema({
     publicChat :[{
         type : String,
         ref : "chats"
-    }]
+    }],
+    accountType : String
 });
 
 var PaymentSchema = new schema({
