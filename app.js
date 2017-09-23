@@ -178,6 +178,7 @@ var Comment = mongoose.model('comments', CommentSchema);
 var ChatRoom = mongoose.model('chats', ChatRoomSchema);
 var Board = mongoose.model('boards', BoardSchema);
 var Memory = mongoose.model('memories', MemorySchema);
+var Booth = mongoose.model('boothes', BoothSchema);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
