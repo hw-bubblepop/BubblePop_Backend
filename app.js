@@ -154,6 +154,13 @@ var MemorySchema = new schema({
     _id : String
 });
 
+var BoothSchema = new schema({
+    _id : String,
+    location : String,
+    title : String,
+    address : String
+});
+
 mongoose.connect("mongodb://localhost:27017/bubblepop", function (err) {
     if(err){
         throw err;
