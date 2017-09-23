@@ -128,6 +128,50 @@ var StudySchema = new schema({
     }]
 });
 
+var CommentSchema = new schema({
+    _id : String,
+    writer : String,
+    content : String
+});
+
+var ChatRoomSchema = new schema({
+    _id : String,
+    title : String,
+    member : [{
+        type : String,
+        ref : "users"
+    }],
+    lastChat : String,
+    lastChatTime : String,
+    thumbnail : String
+});
+
+var BoardSchema = new schema({
+    _id : String
+});
+
+var MemorySchema = new schema({
+    _id : String
+});
+
+mongoose.connect("mongodb://localhost:27017/bubblepop", function (err) {
+    if(err){
+        throw err;
+    }
+    console.log("DB Server Connect Success!");
+});
+
+var User = mongoose.model('users', UserSchema);
+var Payment = mongoose.model('payments', PaymentSchema);
+var HeavenCard = mongoose.model('heavencards', HeavenCardSchema);
+var Reservation = mongoose.model('reservations', ReservationSchema);
+var Party = mongoose.model('parties', PartySchema);
+var Study = mongoose.model('studies', StudySchema);
+var Comment = mongoose.model('comments', CommentSchema);
+var ChatRoom = mongoose.model('chats', ChatRoomSchema);
+var Board = mongoose.model('boards', BoardSchema);
+var Memory = mongoose.model('memories', MemorySchema);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
