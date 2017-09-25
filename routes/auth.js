@@ -35,7 +35,7 @@ function init(app, User, randomString){
                     password : "",
                     nickname : profile.displayName,
                     location : 0,
-                    heavencard : {},
+                    heavencard : "",
                     payment : [],
                     reservation : [],
                     study : [],
