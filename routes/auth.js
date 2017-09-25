@@ -7,7 +7,7 @@ function init(app, User, randomString){
         rename : function (fieldname, filename) {
             return 'thumbnails_' + filename;
         }
-    })
+    });
     app.use(passport.initialize());
     app.use(passport.session());
     passport.serializeUser(function(user, done){
@@ -60,15 +60,15 @@ function init(app, User, randomString){
         });
     }));
 
-    app.post('/auth/register', upload.array('thumbnail', 5), function(req, res){
+    app.post('/auth/register', upload.single('thumbnail'), function(req, res){
         user = new User({
             _id : randomString.generate(13),
-            thumbnail : "/photos" + req.files[0].filename,
+            thumbnail : "/photos/" + req.file,
             email : req.body.email,
             password : req.body.password,
             nickname : req.body.nickname,
-            location : req.body.location,
-            heavencard : {},
+            location : 0,
+            heavencard : "",
             payment : [],
             reservation : [],
             study : [],
@@ -78,6 +78,7 @@ function init(app, User, randomString){
             publicChat :[],
             accountType : "Local"
         });
+        console.log(user.email);
         User.find({email : req.body.email})
             .exec(function(err, result){
                 if(err){
@@ -91,6 +92,7 @@ function init(app, User, randomString){
                 else if(result.length == 0){
                     user.save(function(err){
                         if(err){
+                            throw err;
                             console.log("/auth/local/register Failed");
                             res.send(403, "/auth/local/register DB Error");
                         }
