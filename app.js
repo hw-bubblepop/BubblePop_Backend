@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var randomString = require('randomstring');
 var session = require('express-session');
-var schema = mongoose.Schema();
+var schema = mongoose.Schema;
 
 var index = require('./routes/index');
 var users = require('./routes/users');

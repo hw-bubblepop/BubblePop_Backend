@@ -51,3 +51,4 @@ function init(app, User, Party, randomString) {
         });
     });
 }
+module.exports = init;

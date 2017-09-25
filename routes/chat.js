@@ -15,3 +15,4 @@ function init(app, User, randomString) {
 
     });
 }
+module.exports = init;
