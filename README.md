@@ -515,11 +515,75 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
+* /party/create : create party
+
+> Requiring
+
+    title : party title
+
+    description : party description
+
+    category : party category
+
+    location : party location address
+
+    date : party Date
+
+    thumbnail : party thumbnail file (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /party/list : get party lists
+
+> Requiring
+
+    nothing
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
+* /party/edit : edit party info
+
+> Requiring
+
+    title : party title
+
+    description : party description
+
+    category : party category
+
+    location : party location address
+
+    date : party Date
+
+    thumbnail : party thumbnail file (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
+* /party/delete : delete party
 
+> Requiring
+
+    id : party _id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
 

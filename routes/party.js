@@ -22,7 +22,9 @@ function init(app, User, Party, randomString) {
             description : req.body.description,
             thumbnail : "/photos/" + req.files[0].filename,
             like : 0,
-            comment : []
+            comment : [],
+            date : req.body.date,
+            category : req.body.category
         });
         party.save(function (err, result) {
             if(err){
@@ -33,7 +35,15 @@ function init(app, User, Party, randomString) {
         });
     });
     app.post('/party/edit', upload.array("thumbnail", 4) ,function (req, res) {
-        Party.findOneAndUpdate({_id : req.body.id}, {title : req.body.title, description: req.body.description, thumbnail : "/photos/" + req.files[0].filename}, function (err, result) {
+        Party.findOneAndUpdate({_id : req.body.id}, {
+            title : req.body.title,
+            description: req.body.description,
+            thumbnail : "/photos/" + req.files[0].filename,
+            location : req.body.location,
+            date : req.body.date,
+            category : req.body.category
+        }, function (err, result) {
+
             if(err){
                 console.log("Update Error");
                 res.send(401, "Update Err");
