@@ -48,9 +48,7 @@ function init(app, User, randomString){
             res.send(200, result);
         });
 
-    })
-
-    app.post('/user/')
+    });
 
     app.post('/user/update/card', function (req, res) {
         User.findOneAndUpdate({_id : req.body.id}, {thumbnail : req.body.thumbnail}, function (err, result) {

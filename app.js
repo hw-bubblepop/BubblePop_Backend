@@ -20,7 +20,7 @@ var UserSchema = new schema({
     email : String,
     password : String,
     nickname : String,
-    age : String,
+    age : Number,
     location : Number,
     heavencard : {
         type : String,
@@ -139,6 +139,7 @@ var CommentSchema = new schema({
 
 var ChatRoomSchema = new schema({
     _id : String,
+    id : String,
     title : String,
     member : [{
         type : String,

@@ -15,7 +15,7 @@ STAC2017 Project BubblePop Backend
 
 > nickname : String
 
-> age : String
+> age : Number
 
 > location : Number
 
@@ -55,9 +55,7 @@ STAC2017 Project BubblePop Backend
 
 > friends : Object ID Array (User 오브젝트 id 참조)
 
-> privateChat : 1대1 채팅 Object ID Array (ChatRoom 오브젝트 id 참조)
-
-> publicChat : 단체채팅 및 오픈채팅 Object ID Array (ChatRoom 오브젝트 id 참조)
+> chatroom : Object ID Array (ChatRoom 오브젝트 id 참조)
 
 > accountType : 사용자 회원가입 타입, String
 
@@ -192,6 +190,10 @@ STAC2017 Project BubblePop Backend
 
 > thumbnail : String
 
+> owner : String
+
+> chattype : String (private or public)
+
 ### BoardSchema
 
 > _id : String
@@ -256,7 +258,190 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
-* /user/edit/profile : Edit User profile, POST
+* /user/update/nickname : Edit User nickname, POST
+
+> Requiring
+
+    id : _id
+
+    nickname : nickname
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /user/update/password : Edit User Password, POST
+
+> Requiring
+
+    id : _id
+
+    password : password
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /user/update/location : Edit User location, POST
+
+> Requiring
+
+    id : _id
+
+    location : location Number Value
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /user/update/age : Edit User age, POST
+
+> Requiring
+
+    id : _id
+
+    age : age
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /user/update/card : Edit User card Thumbnail route, POST
+
+> Requiring
+
+    id : _id
+
+    thumbnail : New Thumbnail Route
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+
+* /payment/add : Add Payment Info, POST
+
+> Requiring
+
+    owner : card owner
+
+    exchange : card exchange
+
+    number : card number
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /payment/update : Update Payment Info, POST
+
+> Requiring
+
+    owner : card owner
+
+    exchange : card exchange
+
+    number : card number
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /payment/delete : Delete Payment Info, POST
+
+> Requiring
+
+    id : _id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /chat/private/list : Get User's private chat list
+
+> Requiring
+
+    id : user_id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success, private Chat List
+
+* /chat/public/list : Get User's public and openchat list
+
+> Requiring
+
+    id : user_id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success, public chat list
+
+* /chat/:id : Create Chatroom on DB (For ChatServer)
+
+> Requiring
+
+    id (url param) : chatroom id
+
+    title : chatroom title
+
+    owner_id : chatroom owner
+
+    thumbnail : file param, chatroom thumbnail
+
+    type : chatroom type(public or private)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+
+* /chat/:id/leave : Leave Chatroom (For ChatServer)
+
+> Requiring
+
+    id (url param) : chatroom id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
