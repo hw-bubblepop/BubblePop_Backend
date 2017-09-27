@@ -20,6 +20,7 @@ var UserSchema = new schema({
     email : String,
     password : String,
     nickname : String,
+    age : String,
     location : Number,
     heavencard : {
         type : String,
@@ -95,7 +96,8 @@ var PartySchema = new schema({
         type : String,
         ref : "comments"
     }],
-    date : String
+    date : String,
+    category : Number
 });
 
 var StudySchema = new schema({
