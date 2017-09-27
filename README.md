@@ -209,3 +209,55 @@ STAC2017 Project BubblePop Backend
 > title : String
 
 > address : String
+
+====================
+
+## API Docs (All Value Input is req.body)
+
+* /auth/register : POST
+
+> Requiring
+
+    thumbnail(file) : profile pic file
+
+    email : email
+
+    password : password
+
+    nickname : nickname
+
+    age : age
+
+> Return
+
+    403 : DB Error
+
+    401 : User Data Exists
+
+    200 : Success, User Schema Return
+
+
+
+* /auth/login : POST
+
+> Requiring
+
+    email : email
+
+    password : password
+
+> Return
+
+    401 : Unvalid User Info
+
+    404 : Can't find User Data
+
+    403 : DB Error
+
+    200 : Success
+
+* /user/edit/profile : Edit User profile, POST
+
+
+
+

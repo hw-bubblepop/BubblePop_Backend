@@ -110,6 +110,7 @@ function init(app, User, randomString){
             email : req.body.email,
             password : req.body.password,
             nickname : req.body.nickname,
+            age : req.body.age,
             location : 0,
             heavencard : "",
             payment : [],
@@ -168,10 +169,6 @@ function init(app, User, randomString){
                 else if (result.password != req.body.password) {
                     console.log("Password Error!");
                     res.send(401, "Access Denied");
-                }
-                else if(result.emailVeryfied == 0){
-                    console.log("Unverified  User");
-                    res.send(406, "Unverified User");
                 }
             }
             else{
