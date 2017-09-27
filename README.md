@@ -695,4 +695,41 @@ STAC2017 Project BubblePop Backend
     200 : Success
 
 
+* /social/:id : get specific User's Data
+
+> Requiring
+
+    id : target user's id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /social/add : add friend
+
+> Requiring
+
+    id : user's id
+
+    target_id : target user's id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /social/list : get friend list
+
+> Requiring
+
+    id : user's id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success, Friend Array Return
 

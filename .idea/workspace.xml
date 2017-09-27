@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21197be4-d4b8-4917-9b59-8a014cf81475" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/social.js" afterPath="$PROJECT_DIR$/routes/social.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +23,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.34568653">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="party.js" pinned="false" current-in-tab="false">
@@ -76,7 +76,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="auth.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/auth.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="400">
@@ -99,8 +99,8 @@
           <file leaf-file-name="heavencard.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/heavencard.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+                <state relative-caret-position="436">
+                  <caret line="71" column="73" lean-forward="false" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
                   <folding />
                 </state>
               </provider>
@@ -116,6 +116,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="social.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/routes/social.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="560">
+                  <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -123,7 +133,7 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
+                <state relative-caret-position="580">
                   <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
                   <folding />
                 </state>
@@ -134,8 +144,8 @@
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="416">
-                    <caret line="250" column="20" lean-forward="false" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
+                  <first_editor relative-caret-position="380">
+                    <caret line="733" column="38" lean-forward="false" selection-start-line="733" selection-start-column="38" selection-end-line="733" selection-end-column="38" />
                     <folding />
                   </first_editor>
                   <second_editor>
@@ -176,7 +186,6 @@
         <option value="$PROJECT_DIR$/routes/booth.js" />
         <option value="$PROJECT_DIR$/routes/payment.js" />
         <option value="$PROJECT_DIR$/routes/reservation.js" />
-        <option value="$PROJECT_DIR$/routes/social.js" />
         <option value="$PROJECT_DIR$/routes/study.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/routes/user.js" />
@@ -186,6 +195,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/auth.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/social.js" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -288,12 +298,12 @@
       <workItem from="1506388909709" duration="5242000" />
       <workItem from="1506417086040" duration="149000" />
       <workItem from="1506445708555" duration="4243000" />
-      <workItem from="1506520426053" duration="21041000" />
+      <workItem from="1506520426053" duration="21221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54721000" />
+    <option name="totallyTimeSpent" value="54901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -410,6 +420,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -487,6 +498,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -563,6 +575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/social.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
@@ -669,14 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/heavencard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -723,7 +721,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="580">
           <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
           <folding />
         </state>
@@ -737,11 +735,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/heavencard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="71" column="73" lean-forward="false" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/social.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="416">
-            <caret line="250" column="20" lean-forward="false" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
+          <first_editor relative-caret-position="380">
+            <caret line="733" column="38" lean-forward="false" selection-start-line="733" selection-start-column="38" selection-end-line="733" selection-end-column="38" />
             <folding />
           </first_editor>
           <second_editor>

@@ -18,7 +18,7 @@ function init(app, User, randomString) {
         })
     });
     app.post('/social/add', function (req, res) {
-        User.findOneAndUpdate({_id : req.body.id}, {$push : {friends : req.body.target_id}}, function (err, result) {
+        User.findOneAndUpdate({_id : req.body.id}, {$push : {friends : req.body.target_id}}, {new : true}, function (err, result) {
             if(err){
                 console.log("DB Error");
                 res.send(401, "DB Error");
