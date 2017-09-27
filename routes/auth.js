@@ -9,117 +9,24 @@ function init(app, User, randomString){
             return 'thumbnails_' + filename;
         }
     });
-    app.use(passport.initialize());
-    app.use(passport.session());
-    passport.serializeUser(function(user, done){
-        done(null, user);
-    });
-    passport.deserializeUser(function(obj, done){
-        done(null, obj);
-    });
-    // passport.use(new KakaotalkTokenStrategy({
-    //     clientID : "",
-    //     clientSecret : ""
-    // }, function (accessToken, refreshToken, profile, done) {
-    //     console.log(profile);
-    //     User.findOne({
-    //         _id : profile.id
-    //     }, function (err, user) {
-    //         if(err){
-    //             return done(err);
-    //         }
-    //         if(!user){
-    //             user = new User({
-    //                 _id : profile.id,
-    //                 thumbnail : profile.photos[0].value,
-    //                 email : profile.emails[0].value,
-    //                 password : "",
-    //                 nickname : profile.displayName,
-    //                 location : 0,
-    //                 heavencard : "",
-    //                 payment : [],
-    //                 reservation : [],
-    //                 study : [],
-    //                 party : [],
-    //                 friends : [],
-    //                 privateChat : [],
-    //                 accountType : "KakaoTalk"
-    //             });
-    //             user.save(function (err) {
-    //                 if(err){
-    //                     console.log(err);
-    //                 }
-    //                 else{
-    //                     done(null, profile);
-    //                 }
-    //             });
-    //         }
-    //         else if(user){
-    //             done(null, profile);
-    //         }
-    //     });
-    // }));
-    passport.use(new FacebookTokenStrategy({
-        clientID : "247151832435976",
-        clientSecret : "62585d23d288396ee3de224af2e0d34f"
-    }, function(accessToken, refreshToken, profile, done){
-        console.log(profile);
-        User.findOne({
-            _id : profile.id
-        }, function(err, user){
-            if(err){
-                return done(err);
-            }
-            if(!user){
-                user = new User({
-                    _id : profile.id,
-                    thumbnail : profile.photos[0].value,
-                    email : profile.emails[0].value,
-                    password : "",
-                    nickname : profile.displayName,
-                    location : 0,
-                    heavencard : "",
-                    payment : [],
-                    reservation : [],
-                    study : [],
-                    party : [],
-                    friends : [],
-                    privateChat : [],
-                    publicChat :[],
-                    accountType : "Facebook"
-                });
-                user.save(function(err){
-                    if(err){
-                        console.log(err);
-                    }
-                    else{
-                        done(null, profile);
-                    }
-                });
-            }
-            else if(user){
-                done(null, profile);
-            }
-        });
-    }));
-
     app.post('/auth/register', upload.single('thumbnail'), function(req, res){
+        var random = randomString.generate(13)
         user = new User({
-            _id : randomString.generate(13),
-            thumbnail : "/photos/" + req.file,
+            _id : random,
+            thumbnail : "/photos/" + req.body.nickname,
             email : req.body.email,
             password : req.body.password,
             nickname : req.body.nickname,
             age : req.body.age,
-            location : 0,
+            location : req.body.location,
             heavencard : "",
             payment : [],
             reservation : [],
             study : [],
             party : [],
             friends : [],
-            privateChat : [],
-            publicChat :[],
+            chatroom : [],
+            star : req.body.star,
             accountType : "Local"
         });
         console.log(user.email);

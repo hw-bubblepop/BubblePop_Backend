@@ -59,6 +59,22 @@ STAC2017 Project BubblePop Backend
 
 > accountType : 사용자 회원가입 타입, String
 
+> star : String ID Array
+
+    0 : 연애
+    1 : 스포츠
+    2 : 시사
+    3 : 여행/맛집
+    4 : 패션/뷰티
+    5 : 컬쳐
+    6 : 인테리어/디자인
+    7 : 건강/다이어트
+    8 : 자동차
+    9 : IT/모바일
+    10 : IT개발/기획
+    11 : TV
+    12 : 동물
+    13 : 게임
 
 ### PaymentSchema
 
