@@ -7,7 +7,7 @@ function init(app, User, HeavenCard, randomString){
         }
     });
     app.post('/heavencard/edit/thumbnail', upload.array("thumbnail", 5),function (req, res) {
-        HeavenCard.findOneAndUpdate({_id : req.body.id}, {thumbnail : "/photo/" + req.files[0].filename}, function (err, result) {
+        HeavenCard.findOneAndUpdate({_id : req.body.id}, {$push : {thumbnail : "/photo/" + req.files[0].filename}}, function (err, result) {
             if(err){
                 console.log("Update Error");
                 res.send(401, "Update Error");
@@ -17,7 +17,12 @@ function init(app, User, HeavenCard, randomString){
     });
 
     app.post('/heavencard/edit/detail', function (req, res) {
-        HeavenCard.findOneAndUpdate({_id : req.body.id}, {description : req.body.description, position : req.body.position, organization: req.body.organization, email : req.body.email, phone : req.body.phone},function (err, result) {
+        HeavenCard.findOneAndUpdate({_id : req.body.id}, {
+            description : req.body.description,
+            position : req.body.position,
+            organization: req.body.organization,
+            email : req.body.email,
+            phone : req.body.phone},function (err, result) {
             if(err){
                 console.log("Update Error");
                 res.send(401, "Update Error");
@@ -54,7 +59,7 @@ function init(app, User, HeavenCard, randomString){
            organization : req.body.organization,
            phone : req.body.phone,
            email : req.body.email,
-           thumbnail : "/photos/" + req.files[0].filename,
+           thumbnail : [].push("/photos/" + req.files[0].filename),
            balance : 0,
            cardHistory : [],
            cardOrder : {}

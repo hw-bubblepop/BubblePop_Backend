@@ -71,7 +71,9 @@ var HeavenCardSchema = new schema({
     organization : String,
     phone : String,
     email : String,
-    thumbnail : String,
+    thumbnail : [{
+        type : String
+    }],
     balance : Number,
     cardHistory : [{
         type : Object

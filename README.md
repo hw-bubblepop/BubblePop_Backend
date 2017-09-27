@@ -84,7 +84,7 @@ STAC2017 Project BubblePop Backend
 
 > email : String
 
-> thumbnail : 최근 설정한 썸네일 경로, String
+> thumbnail : 최근 설정한 썸네일 경로, String Array
 
 > balance : 카드 잔액, Number
 
@@ -585,11 +585,71 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
+* /heavencard/create : create heavencard
 
+> Requiring
 
+    description : 한줄소개
 
+    position : position
 
+    organization : organization name
 
+    phone : phone number
+
+    email : email
+
+    thumbnail : Heavencard Thumbnail file (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /heavencard/:id : get heavencard info
+
+> Requiring
+
+    id (url param) : heavencard id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /heavencard/edit/detail : edit heavencard detail info
+
+> Requiring
+
+    description : 한줄소개
+
+        position : position
+
+        organization : organization name
+
+        phone : phone number
+
+        email : email
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /heavencard/edit/detail : edit heavencard detail info
+
+> Requiring
+
+    thumbnail : New Thumbnail File (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
 
