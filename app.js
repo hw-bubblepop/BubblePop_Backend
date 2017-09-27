@@ -46,14 +46,7 @@ var UserSchema = new schema({
         type : String,
         ref : "users"
     }],
-    privateChat : [{
-        type : String,
-        ref : "chats"
-    }],
-    publicChat :[{
-        type : String,
-        ref : "chats"
-    }],
+    chatroom : [],
     accountType : String
 });
 
@@ -149,7 +142,8 @@ var ChatRoomSchema = new schema({
     }],
     lastChat : String,
     lastChatTime : String,
-    thumbnail : String
+    thumbnail : String,
+    owner : String
 });
 
 var BoardSchema = new schema({
@@ -208,7 +202,7 @@ require('./routes/reservation.js')(app, User, Reservation, randomString);
 require('./routes/party.js')(app, User, Party, randomString);
 require('./routes/study.js')(app, User, Study ,randomString, Board, Memory);
 require('./routes/social.js')(app, User, randomString);
-require('./routes/chat.js')(app, User, randomString);
+require('./routes/chat.js')(app, User, randomString, ChatRoom);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

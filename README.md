@@ -397,19 +397,13 @@ STAC2017 Project BubblePop Backend
 
     200 : Success, public chat list
 
-* /chat/:id : Create Chatroom on DB (For ChatServer)
+* /chat/create : Create Chatroom on DB (For ChatServer)
 
 > Requiring
 
-    id (url param) : chatroom id
+    chattype : Chatroom's type (public or private)
 
-    title : chatroom title
-
-    owner_id : chatroom owner
-
-    thumbnail : file param, chatroom thumbnail
-
-    type : chatroom type(public or private)
+    title : Chatroom's title
 
 > Return
 
@@ -418,13 +412,13 @@ STAC2017 Project BubblePop Backend
     200 : Success
 
 
-* /chat/:id/leave : Leave Chatroom (For ChatServer)
+* /chat/leave : Leave Chatroom (For ChatServer)
 
 > Requiring
 
-    id (url param) : chatroom id
+    chat_room_id : chatroom id
 
-    user_id : Update Target User Id
+    user_id : user id
 
 > Return
 
@@ -432,13 +426,27 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
-* /chat/user/add/:chat_id : Update User Chatroom info (For ChatServer)
+* /chat/adduser : Update User Chatroom info (For ChatServer)
 
 > Requiring
 
-    id : Update Target User Id
+    chat_room_id : chatroom id
 
-    chat_id : Chatroom ID
+    user_id : User id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /chat/setowner : Set Chatroom owner (For ChatServer)
+
+> Requiring
+
+    chat_room_id : chatroom id
+
+    user_id : User id
 
 > Return
 
