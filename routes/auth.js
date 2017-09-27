@@ -1,6 +1,7 @@
 function init(app, User, randomString){
     var passport = require('passport');
     var FacebookTokenStrategy = require('passport-facebook-token');
+    // var KakaotalkTokenStrategy = require('passport-kakao-token');
     var multer = require('multer');
     var upload = multer({
         dest : './public/photos/',
@@ -16,6 +17,48 @@ function init(app, User, randomString){
     passport.deserializeUser(function(obj, done){
         done(null, obj);
     });
+    // passport.use(new KakaotalkTokenStrategy({
+    //     clientID : "",
+    //     clientSecret : ""
+    // }, function (accessToken, refreshToken, profile, done) {
+    //     console.log(profile);
+    //     User.findOne({
+    //         _id : profile.id
+    //     }, function (err, user) {
+    //         if(err){
+    //             return done(err);
+    //         }
+    //         if(!user){
+    //             user = new User({
+    //                 _id : profile.id,
+    //                 thumbnail : profile.photos[0].value,
+    //                 email : profile.emails[0].value,
+    //                 password : "",
+    //                 nickname : profile.displayName,
+    //                 location : 0,
+    //                 heavencard : "",
+    //                 payment : [],
+    //                 reservation : [],
+    //                 study : [],
+    //                 party : [],
+    //                 friends : [],
+    //                 privateChat : [],
+    //                 accountType : "KakaoTalk"
+    //             });
+    //             user.save(function (err) {
+    //                 if(err){
+    //                     console.log(err);
+    //                 }
+    //                 else{
+    //                     done(null, profile);
+    //                 }
+    //             });
+    //         }
+    //         else if(user){
+    //             done(null, profile);
+    //         }
+    //     });
+    // }));
     passport.use(new FacebookTokenStrategy({
         clientID : "247151832435976",
         clientSecret : "62585d23d288396ee3de224af2e0d34f"
@@ -31,7 +74,7 @@ function init(app, User, randomString){
                 user = new User({
                     _id : profile.id,
                     thumbnail : profile.photos[0].value,
-                    email : Stprofile.emails[0].value,
+                    email : profile.emails[0].value,
                     password : "",
                     nickname : profile.displayName,
                     location : 0,
@@ -106,7 +149,7 @@ function init(app, User, randomString){
     });
 
     app.post('/auth/login', function (req, res) {
-        console.log("User Login : " + req.body.token);
+        console.log("User Login : " + req.body.email);
         User.findOne({email : req.body.email}, function (err, result) {
             console.log("DB Founded : "+ result);
             if(err){
