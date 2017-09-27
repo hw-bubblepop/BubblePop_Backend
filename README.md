@@ -246,6 +246,10 @@ STAC2017 Project BubblePop Backend
 
     age : age
 
+    location : location code
+
+    star : 관심사 array
+
 > Return
 
     403 : DB Error
