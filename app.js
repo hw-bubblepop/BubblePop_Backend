@@ -143,7 +143,8 @@ var ChatRoomSchema = new schema({
     lastChat : String,
     lastChatTime : String,
     thumbnail : String,
-    owner : String
+    owner : String,
+    serial : ""
 });
 
 var BoardSchema = new schema({

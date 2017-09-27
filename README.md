@@ -192,7 +192,7 @@ STAC2017 Project BubblePop Backend
 
 > owner : String
 
-> chattype : String (private or public)
+> chattype : String (private or public or open)
 
 ### BoardSchema
 
@@ -401,7 +401,7 @@ STAC2017 Project BubblePop Backend
 
 > Requiring
 
-    chattype : Chatroom's type (public or private)
+    chattype : Chatroom's type (public or private or open)
 
     title : Chatroom's title
 
@@ -411,6 +411,21 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
+* /chat/create/open : Create OpenChatroom on DB (For ChatServer)
+
+> Requiring
+
+    title : CHatroom's title
+
+    thumbnail : Chatroom's thumbnail (File Upload)
+
+    serial : Openchat Serial
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 * /chat/leave : Leave Chatroom (For ChatServer)
 

@@ -26,9 +26,9 @@ function init(app, User, randomString, Chatroom) {
         });
     });
 
-    // app.post('/chat/invite', function (req, res) {
-    //
-    // });
+    app.post('/chat/invite', function (req, res) {
+
+    });
     // app.post('/chat/:id', upload.array('thumbnail', 4), function (req, res) {
     //     var chat = {
     //         _id : randomString.generate(15),
@@ -81,6 +81,27 @@ function init(app, User, randomString, Chatroom) {
     //     })
     // });
 
+    app.post('/chat/create/open', upload.array("thumbnail", 4),function (req, res) {
+        var openchat = new Chatroom({
+            _id : randomString.generate(14),
+            chattype : "open",
+            title : req.body.title,
+            thumbnail : "/photos/" + req.files[0].filename,
+            serial : req.body.serial,
+            member : [],
+            lastChat : "",
+            lastChatTime : "",
+            owner : ""
+        })
+        openchat.save(function (err, result) {
+            if(err){
+                console.log("DB Err");
+                res.send(403, "DB Errr");
+            }
+            res.send(200, openchat);
+        })
+    });
+
     app.post('/chat/create', function (req, res) {
         var chat = new Chatroom({
             _id : randomString.generate(14),
@@ -90,7 +111,8 @@ function init(app, User, randomString, Chatroom) {
             lastChat : "",
             lastChatTime : "",
             thumbnail : "",
-            owner : ""
+            owner : "",
+            serial : ""
         });
         chat.save(function (err, result) {
             if(err){
