@@ -424,13 +424,96 @@ STAC2017 Project BubblePop Backend
 
     id (url param) : chatroom id
 
+    user_id : Update Target User Id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /chat/user/add/:chat_id : Update User Chatroom info (For ChatServer)
+
+> Requiring
+
+    id : Update Target User Id
+
+    chat_id : Chatroom ID
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
+* /study/create : create Study
 
+> Requiring
 
+    title : study title
 
+    description : study description
 
+    category : study category
 
+    location : Study location address
+
+    date : study Date
+
+    thumbnail : Study thumbnail file (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /study/edit : Edit Study Info
+
+> Requiring
+
+    title : study title
+
+    description : study description
+
+    category : study category
+
+    location : Study location address
+
+    date : study Date
+
+    thumbnail : Study thumbnail file (file upload)
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /study/list : get study lists
+
+> Requiring
+
+    Nothing
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /study/delete : delete study
+
+> Requiring
+
+    id : study _id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
 
 
 

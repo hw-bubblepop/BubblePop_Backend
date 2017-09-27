@@ -56,7 +56,7 @@ function init(app, User, randomString) {
         });
     });
     app.post('/chat/:id/leave', function (req, res) {
-        Chat.findOneAndRemove({_id : req.param('id')}, {new : true}, function (err, result) {
+        Chat.findOneAndRemove({id : req.param('id')}, {new : true}, function (err, result) {
             if(err){
                 console.log("DB Err");
                 res.send(403, "DB Err");
@@ -71,8 +71,8 @@ function init(app, User, randomString) {
         });
     });
 
-    app.post('/chat/user/add/:id', function (req, res) {
-        User.findOneAndUpdate({_id : req.param('id')}, {$push : {chatroom : req.param('id')}}, {new : true},function (err, result) {
+    app.post('/chat/user/add/:chat_id', function (req, res) {
+        User.findOneAndUpdate({_id : req.param('id')}, {$push : {chatroom : req.param('chat_id')}}, {new : true},function (err, result) {
             if(err){
                 console.log("DB Err");
                 res.send(403, "DB Err");
