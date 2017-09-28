@@ -9,25 +9,27 @@ function init(app, User, randomString){
             return 'thumbnails_' + filename;
         }
     });
-    app.post('/auth/register', upload.single('thumbnail'), function(req, res){
+
+    app.post('/auth/register', upload.single('thumbnail'), (req, res)=>{
         var random = randomString.generate(13)
-        user = new User({
-            _id : random,
-            thumbnail : "/photos/" + req.body.nickname,
-            email : req.body.email,
-            password : req.body.password,
-            nickname : req.body.nickname,
-            age : req.body.age,
-            location : req.body.location,
-            heavencard : "",
-            payment : [],
-            reservation : [],
-            study : [],
-            party : [],
-            friends : [],
-            chatroom : [],
-            star : req.body.star,
-            accountType : "Local"
+        console.log(req.file.filename)
+        var user = new User({
+            '_id' : random,
+            'thumbnail' : "/photos/" + req.file.filename,
+            'email' : req.body.email,
+            'password' : req.body.password,
+            'nickname' : req.body.nickname,
+            'age' : req.body.age,
+            'location' : req.body.location,
+            'heavencard' : "",
+            'payment' : [],
+            'reservation' : [],
+            'study' : [],
+            'party' : [],
+            'friends' : [],
+            'chatroom' : [],
+            'star' : req.body.star,
+            'accountType' : "Local"
         });
         console.log(user.email);
         User.find({email : req.body.email})
@@ -52,6 +54,7 @@ function init(app, User, randomString){
                             res.send(200, user);
                         }
                     });
+                    // res.send(200, user)
                 }
             });
     });

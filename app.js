@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var randomString = require('randomstring');
 var session = require('express-session');
-var fileUpload = require('express-fileupload');
+// var fileUpload = require('express-fileupload');
 var schema = mongoose.Schema;
 
 var index = require('./routes/index');
@@ -194,7 +194,7 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(fileUpload());
+// app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit: '5mb', extended: false, parameterLimit: 10000 }));
 app.use(cookieParser());
