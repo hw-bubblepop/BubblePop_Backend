@@ -276,6 +276,20 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
+# /user/update/thumbnail : Edit User Thumbnail, POST
+
+> Requiring
+
+    id : _id
+
+    thumbnail : image file
+
+> Return
+    
+    401 : DB Error
+
+    200 : Success
+
 * /user/update/nickname : Edit User nickname, POST
 
 > Requiring

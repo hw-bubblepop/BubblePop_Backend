@@ -11,7 +11,7 @@ var session = require('express-session');
 var schema = mongoose.Schema;
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var app = express();
 
@@ -201,7 +201,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
 require('./routes/auth.js')(app, User, randomString);
 require('./routes/user.js')(app, User, randomString);
 require('./routes/heavencard.js')(app, User, HeavenCard, randomString);

@@ -14,7 +14,7 @@ function init(app, User, randomString){
         var random = randomString.generate(13)
         var user = new User({
             '_id' : random,
-            'thumbnail' : "/photos/default",
+            'thumbnail' : "/default.png",
             'email' : req.body.email,
             'password' : req.body.password,
             'nickname' : req.body.nickname,
