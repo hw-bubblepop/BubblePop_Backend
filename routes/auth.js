@@ -10,12 +10,11 @@ function init(app, User, randomString){
         }
     });
 
-    app.post('/auth/register', upload.single('thumbnail'), (req, res)=>{
+    app.post('/auth/register',  (req, res)=>{
         var random = randomString.generate(13)
-        console.log(req.file.filename)
         var user = new User({
             '_id' : random,
-            'thumbnail' : "/photos/" + req.file.filename,
+            'thumbnail' : "/photos/default",
             'email' : req.body.email,
             'password' : req.body.password,
             'nickname' : req.body.nickname,
