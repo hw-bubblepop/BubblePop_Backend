@@ -93,5 +93,49 @@ function init(app, User, randomString){
             res.send(200, result)
         })
     })
+    
+    app.post('/user', (req, res)=>{
+        if(req.body.id){
+            User.findOne({_id : req.body.id}, (err, result)=>{
+                if(err){
+                    console.log("DB Error")
+                    res.send(401, "DB Error")
+                }
+                if(result){
+                    res.send(200, result)
+                }else{
+                    res.send(400, "user not found")
+                }
+            })
+        }
+
+        if(req.body.email){
+            User.findOne({email: req.body.email}, (err, result)=>{
+                if(err){
+                    console.log("DB Error")
+                    res.send(401, "DB Error")
+                }
+                if(result){
+                    res.send(200, result)
+                }else{
+                    res.send(400, "user not found")
+                }
+            })
+        }
+
+        if(req.body.phone){
+            User.findOne({phone: req.body.phone}, (err,result)=>{
+                if(err){
+                    console.log("DB error")
+                    res.send(401, "DB error")
+                }
+                if(result){
+                    res.send(200, result)
+                }else{
+                    res.send(400, "user not found")
+                }
+            })
+        }
+    })
 }
 module.exports = init;

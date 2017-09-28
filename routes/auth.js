@@ -28,7 +28,8 @@ function init(app, User, randomString){
             'friends' : [],
             'chatroom' : [],
             'star' : req.body.star,
-            'accountType' : "Local"
+            'accountType' : "Local",
+            phone : req.body.phone
         });
         console.log(user.email);
         User.find({email : req.body.email})
@@ -86,6 +87,22 @@ function init(app, User, randomString){
             }
         });
     });
+
+    app.post('/auth/auto', (req, res)=>{
+        console.log("User login auto " + req.body.id)
+        User.findOne({_id : req.body.id}, (err, result)=>{
+            if(err){
+                console.log("DB Err /auth/auto")
+                res.send(401, "DB Error")
+            }
+            if(result){
+                res.send(200, result)
+            }else{
+                res.send(400, "user not found")
+            }
+        })
+    })
+
     app.get('/auth/facebook/token', function (req ,res) {
         console.log("User Token : "+ req.body.access_token);
         if(req.user){

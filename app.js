@@ -53,7 +53,8 @@ var UserSchema = new schema({
     star : [{
         type : String
     }],
-    accountType : String
+    accountType : String,
+    phone : String
 });
 
 var PaymentSchema = new schema({

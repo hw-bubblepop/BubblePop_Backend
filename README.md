@@ -275,8 +275,7 @@ STAC2017 Project BubblePop Backend
     403 : DB Error
 
     200 : Success
-
-# /user/update/thumbnail : Edit User Thumbnail, POST
+* /user/update/thumbnail : Edit User Thumbnail, POST
 
 > Requiring
 
@@ -285,7 +284,7 @@ STAC2017 Project BubblePop Backend
     thumbnail : image file
 
 > Return
-    
+
     401 : DB Error
 
     200 : Success
