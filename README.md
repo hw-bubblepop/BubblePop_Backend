@@ -236,8 +236,6 @@ STAC2017 Project BubblePop Backend
 
 > Requiring
 
-    thumbnail(file) : profile pic file
-
     email : email
 
     password : password
