@@ -248,6 +248,12 @@ STAC2017 Project BubblePop Backend
 
     star : 관심사 array
 
+    phone : phone number
+
+    organization : 직장
+
+    jobPosition : 직책
+
 > Return
 
     403 : DB Error
@@ -345,13 +351,13 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
-* /user/update/card : Edit User card Thumbnail route, POST
+* /user/add/card : add user card, POST
 
 > Requiring
 
     id : _id
 
-    thumbnail : New Thumbnail Route
+    card : New Thumbnail Route
 
 > Return
 
@@ -359,6 +365,59 @@ STAC2017 Project BubblePop Backend
 
     200 : Success
 
+* /user/cards : get user's card list, POST
+
+> Requiring
+
+    id : _id
+
+> Return
+
+    401 : DB Error
+
+    400 : User Not Found
+
+    200 : card list
+
+* /user/update/message : update user message, POST
+
+> Requiring
+
+    id : _id
+
+    message : message
+
+> Return
+
+    401 : DB Error
+
+    200 : Success
+
+* /social/add : 친구 추가, POST
+
+> Requiring
+
+    id : _id
+
+    target_id : target's _id
+
+> Return
+
+    401 : DB Error
+
+    200 Success
+
+* /social/list : 친구 리스트, POST
+
+> Requireing
+
+    id : _id
+
+> Return
+
+    401 : DB Error
+
+    200 : Success firend list
 
 * /payment/add : Add Payment Info, POST
 

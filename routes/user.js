@@ -74,13 +74,37 @@ function init(app, User, randomString){
 
     });
 
-    app.post('/user/update/card', function (req, res) {
-        User.findOneAndUpdate({_id : req.body.id}, {thumbnail : req.body.thumbnail}, function (err, result) {
+    app.post('/user/add/card', upload.single('card'), function (req, res) {
+        User.findOneAndUpdate({_id : req.body.id}, {$push: { cards : '/photos/' + req.file.filename }}, {new: true}, function (err, result) {
             if(err){
                 console.log("DB Err");
                 res.send(401, "DB Error");
             }
             res.send(200, result);
+        })
+    })
+
+    app.post('/user/update/message', (req, res)=>{
+        User.findOneAndUpdate({_id : req.body.id}, {$set: { message : req.body.message }}, {new : true}, (err, result)=>{
+            if(err){
+                console.log("DB Error")
+                res.send(401, "DB Error")
+            }
+            res.send(200, result)
+        })
+    })
+
+    app.post('/user/cards', (req, res)=>{
+        User.findOne({_id : req.body.id}, (err, user)=>{
+            if(err){
+                console.log("DB Error")
+                res.send(401, "DB Error")
+            }
+            if(user){
+                res.send(200, user.cards)
+            }else{
+                res.send(400, "user not found")
+            }
         })
     })
 
@@ -100,11 +124,14 @@ function init(app, User, randomString){
                 if(err){
                     console.log("DB Error")
                     res.send(401, "DB Error")
+                    return
                 }
                 if(result){
                     res.send(200, result)
+                    return
                 }else{
                     res.send(400, "user not found")
+                    return
                 }
             })
         }
@@ -114,11 +141,14 @@ function init(app, User, randomString){
                 if(err){
                     console.log("DB Error")
                     res.send(401, "DB Error")
+                    return
                 }
                 if(result){
                     res.send(200, result)
+                    return
                 }else{
                     res.send(400, "user not found")
+                    return
                 }
             })
         }
@@ -128,11 +158,14 @@ function init(app, User, randomString){
                 if(err){
                     console.log("DB error")
                     res.send(401, "DB error")
+                    return
                 }
                 if(result){
                     res.send(200, result)
+                    return
                 }else{
                     res.send(400, "user not found")
+                    return
                 }
             })
         }

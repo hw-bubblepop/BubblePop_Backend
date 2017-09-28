@@ -32,7 +32,7 @@ function init(app, User, randomString) {
                     return friend == req.body.target_id;
                 });
                 if(isInArray){
-                    res.send(400, "target user is existed")
+                    res.send(409, "target user is existed")
                 }else if(user._id == req.body.target_id){
                     res.send(400, "impossible add me")
                 }else{

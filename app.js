@@ -23,10 +23,10 @@ var UserSchema = new schema({
     nickname : String,
     age : Number,
     location : Number,
-    heavencard : {
+    cards : [{
         type : String,
-        ref : 'heavencards'
-    },
+        ref : 'cards'
+    }],
     payment : [{
         type : String,
         ref : "payments"
@@ -54,7 +54,10 @@ var UserSchema = new schema({
         type : String
     }],
     accountType : String,
-    phone : String
+    phone : String,
+    organization: String,
+    jobPosition: String,
+    message: String
 });
 
 var PaymentSchema = new schema({

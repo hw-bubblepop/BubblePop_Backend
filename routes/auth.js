@@ -20,7 +20,7 @@ function init(app, User, randomString){
             'nickname' : req.body.nickname,
             'age' : req.body.age,
             'location' : req.body.location,
-            'heavencard' : "",
+            'cards' : ['/default-card.png'],
             'payment' : [],
             'reservation' : [],
             'study' : [],
@@ -29,7 +29,10 @@ function init(app, User, randomString){
             'chatroom' : [],
             'star' : req.body.star,
             'accountType' : "Local",
-            phone : req.body.phone
+            'phone' : req.body.phone,
+            'organization' : req.body.organization,
+            'jobPosition' : req.body.jobPosition,
+            'message' : ""
         });
         console.log(user.email);
         User.find({email : req.body.email})
